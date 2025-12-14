@@ -1,0 +1,56 @@
+[project]
+name = "call-asr-rag"
+version = "0.1.0"
+description = "MVP of streaming call ASR + pause detection + summarization"
+readme = "README.md"
+authors = [
+    { name = "Vejeja", email = "kornilova.valeriia@gmail.com" }
+]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.3.3",
+    "pydub>=0.25",
+    "python-dotenv>=1.0",
+    "pyyaml>=6.0",
+    "openai>=1.55",
+    "webrtcvad-wheels>=1.0.1",
+    "tone @ git+https://github.com/voicekit-team/T-one.git",
+    "torch>=2.4,<3",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6.9,<0.7",
+    "pre-commit>=3.8,<4",
+    "pytest>=8.3,<9",
+]
+
+[project.scripts]
+call-asr-rag = "call_asr_rag.cli:main"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "F",
+    "E",
+    "W",
+    "I",
+    "UP",
+    "B",
+    "S",
+]
+ignore = [
+    "E203",  # whitespace before ':'
+    "E501",  # handled by formatter/line-length
+]
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"

@@ -1,0 +1,30 @@
+audio:
+  sample_rate: 8000
+  chunk_ms: 300
+
+pause:
+  mode: phrase
+
+vad:
+  mode: 2
+  frame_ms: 20
+  min_silence_ms: 800
+  min_speech_ms: 200
+  hangover_ms: 200
+
+hybrid:
+  idle_ms: 800
+
+context:
+  full_tail_chars: 4000
+
+summary:
+  enabled: true
+  impl: mock
+  max_chars: 1200
+
+openrouter:
+  api_key_env: OPENROUTER_API_KEY
+  model: google/gemma-3-27b-it:free
+  site_url: ""
+  site_title: ""
