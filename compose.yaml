@@ -1,0 +1,12 @@
+name: call-center-rag
+services:
+  audio:
+    build: .
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - HF_HUB_OFFLINE=${HF_HUB_OFFLINE}
+      - CONFIG_PATH=${CONFIG_PATH}
+    ports:
+      - "8001:8001"
+volumes:
+  opensearch-data:

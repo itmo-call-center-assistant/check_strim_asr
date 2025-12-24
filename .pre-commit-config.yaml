@@ -11,4 +11,12 @@ repos:
     hooks:
       - id: uv-lock
       - id: uv-export
-        args: [--format, requirements.txt, --output-file, requirements.txt]
+        args:
+          [
+            --no-dev,
+            --no-hashes,
+            --format,
+            requirements.txt,
+            --output-file,
+            requirements.txt,
+          ]
