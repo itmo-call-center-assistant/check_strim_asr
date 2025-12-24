@@ -5,3 +5,10 @@ repos:
       - id: ruff
         args: ["--fix"]
       - id: ruff-format
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    # uv version.
+    rev: 0.9.17
+    hooks:
+      - id: uv-lock
+      - id: uv-export
+        args: [--format, requirements.txt, --output-file, requirements.txt]

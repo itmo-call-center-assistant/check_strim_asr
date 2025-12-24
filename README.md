@@ -2,7 +2,7 @@
 
 MVP пайплайн для офлайн-прогона звонков (MP3 → чанки → ASR T-one → Pause Driver → Trigger → Summary) с запуском через `uv`.
 
-## Быстрый старт
+## Быстрый старт (CLI)
 
 ```bash
 # 1) Установить зависимости
@@ -22,6 +22,21 @@ UV_CACHE_DIR=.uvcache uv run call-asr-rag \
 
 > Для режима `summary.impl: llm` нужен `OPENROUTER_API_KEY`. Для `mock` сеть не нужна.
 > По умолчанию CLI пишет отчёт в `reports/report.json`.
+
+## Быстрый старт (API)
+
+```bash
+# 1) Установить зависимости
+make sync
+
+# 2) Подготовить .env с OpenRouter ключом (если нужен LLM summary)
+make env
+# или
+make set-openrouter-key KEY=sk-...
+
+# 3) Запустить API
+UV_CACHE_DIR=.uvcache uv run python -m src.api.audio_api
+```
 
 ## Что делает пайплайн
 

@@ -16,7 +16,11 @@ dependencies = [
     "openai>=1.55",
     "webrtcvad-wheels>=1.0.1",
     "tone @ git+https://github.com/voicekit-team/T-one.git",
-    "torch>=2.4,<3",
+    "fastapi>=0.127.0",
+    "uvicorn>=0.40.0",
+    "python-multipart>=0.0.21",
+    "soundfile>=0.13.1",
+    "pyaudio>=0.2.14",
 ]
 
 [dependency-groups]
@@ -24,6 +28,7 @@ dev = [
     "ruff>=0.6.9,<0.7",
     "pre-commit>=3.8,<4",
     "pytest>=8.3,<9",
+    "torch>=2.9.1",
 ]
 
 [project.scripts]
