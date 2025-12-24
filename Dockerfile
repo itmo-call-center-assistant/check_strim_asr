@@ -12,4 +12,4 @@ COPY ./configs /app/configs
 COPY ./src /app/src
 
 EXPOSE 8001
-CMD ["python," "-m", "src.api.audio_api", "--port", "8001"]
+CMD ["python", "-m", "src.api.audio_api", "--port", "8001"]
