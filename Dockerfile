@@ -3,6 +3,8 @@ FROM python:3.11
 WORKDIR /app
 
 # install dependencies
+RUN apt-get update
+RUN apt-get install libasound-dev libportaudio2 libportaudiocpp0 portaudio19-dev -y
 COPY ./requirements.txt /app/requirements.txt
 RUN ["pip", "install", "--no-deps", "--no-cache-dir", "--upgrade", "-r", "/app/requirements.txt"]
 
